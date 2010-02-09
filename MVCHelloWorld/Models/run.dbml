@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Run" Class="runDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Run;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="RunConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Activity" Member="Activities">
+    <Type Name="Activity">
+      <Column Name="activityid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="personid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sportid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="kilometres" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="hours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Association Name="Person_Activity" Member="Person" ThisKey="personid" OtherKey="personid" Type="Person" IsForeignKey="true" />
+      <Association Name="Sport_Activity" Member="Sport" ThisKey="sportid" OtherKey="sportid" Type="Sport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="personid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="personname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Person_Activity" Member="Activities" ThisKey="personid" OtherKey="personid" Type="Activity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sport" Member="Sports">
+    <Type Name="Sport">
+      <Column Name="sportid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sportname" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Sport_Activity" Member="Activities" ThisKey="sportid" OtherKey="sportid" Type="Activity" />
+    </Type>
+  </Table>
+</Database>

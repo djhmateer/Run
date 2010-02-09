@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="run">
+  <DataContextMoniker Name="/runDataContext" />
+  <nestedChildShapes>
+    <classShape Id="51d925bb-b77d-459e-a404-4d48b27167c1" absoluteBounds="4.25, 0.75, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/runDataContext/Activity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2682c01f-1c2b-467a-b260-f84d3e69701e" absoluteBounds="4.2650000000000006, 1.21, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="745f5dbf-0592-455e-8074-da1655978e15" absoluteBounds="1.5, 1.25, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/runDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28f1432a-5ee1-4d4c-9b47-b81e9e4ed35e" absoluteBounds="1.5150000000000001, 1.71, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c5caa89-ee96-4530-9771-a9b4703834c1" absoluteBounds="1.5, 4.25, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/runDataContext/Sport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba13f186-1285-4401-89d6-89c54e61501e" absoluteBounds="1.5150000000000001, 4.71, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 1.79807657877604); (4.25 : 1.79807657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/runDataContext/Person/Person_Activity" />
+      <nodes>
+        <classShapeMoniker Id="745f5dbf-0592-455e-8074-da1655978e15" />
+        <classShapeMoniker Id="51d925bb-b77d-459e-a404-4d48b27167c1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 4.79807657877604); (5.25 : 4.79807657877604); (5.25 : 2.83223714192708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/runDataContext/Sport/Sport_Activity" />
+      <nodes>
+        <classShapeMoniker Id="2c5caa89-ee96-4530-9771-a9b4703834c1" />
+        <classShapeMoniker Id="51d925bb-b77d-459e-a404-4d48b27167c1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
